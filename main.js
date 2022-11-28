@@ -68,11 +68,14 @@ addBtn.addEventListener("click",addKitchenItem)
 kitchenItemsList.addEventListener('click',deleteKitchenItem)
 kitchenItemsList.addEventListener('click',editKitchenItem)
 getLocalStorage();
-addBtn.addEventListener('keyup', function addKitchen (e) {
-    if(e.keyCode=='Enter'){
-        addKitchenItem();
+document.onkeydown= function(event) {
+    switch (event.keycode) {
+        case 'Enter':
+            event.preventDefault();
+           addKitchenItem();
+            break;     
     }
-})
+}
 
 
 
